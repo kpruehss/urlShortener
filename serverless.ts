@@ -11,14 +11,18 @@ const serverlessConfiguration: AWS = {
     runtime: 'nodejs14.x',
     profile: 'serverlessCourseDesktop',
     region: 'ap-southeast-2',
-    iamRoleStatements: [
-      {
-        Effect: 'Allow',
-        Action: 'dynamodb:*',
-        Resource:
-          'arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/${self:custom.urlTableName}',
+    iam: {
+      role: {
+        statements: [
+          {
+            Effect: 'Allow',
+            Action: 'dynamodb:*',
+            Resource:
+              'arn:aws:dynamodb:${self:provider.region}:${aws:accountId}:table/${self:custom.urlTableName}',
+          },
+        ],
       },
-    ],
+    },
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
