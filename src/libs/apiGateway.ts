@@ -2,7 +2,7 @@ export const formatJSONResponse = ({
   statusCode = 200,
   data = {},
 }: {
-  statusCode: number;
+  statusCode?: number;
   data: any;
 }) => {
   return {
