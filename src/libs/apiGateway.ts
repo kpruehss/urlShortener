@@ -1,6 +1,7 @@
 export const formatJSONResponse = ({
   statusCode = 200,
   data = {},
+  headers,
 }: {
   statusCode?: number;
   data: any;
@@ -12,6 +13,7 @@ export const formatJSONResponse = ({
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': true,
+      ...headers,
     },
   };
 };
