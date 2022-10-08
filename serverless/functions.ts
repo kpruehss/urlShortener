@@ -1,13 +1,13 @@
 import type { AWS } from '@serverless/typescript';
 
 const functions: AWS['functions'] = {
-  urlShortener: {
-    handler: 'src/functions/urlShortener/index.handler',
+  setUrl: {
+    handler: 'src/functions/setUrl/index.handler',
     events: [
       {
         httpApi: {
-          path: 'gameDeals',
-          method: 'get',
+          path: '/',
+          method: 'post',
         },
       },
     ],
