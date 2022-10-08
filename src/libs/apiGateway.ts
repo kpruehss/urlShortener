@@ -4,6 +4,7 @@ export const formatJSONResponse = ({
 }: {
   statusCode?: number;
   data: any;
+  headers?: Record<string, string>;
 }) => {
   return {
     statusCode,
